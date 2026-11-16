@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b14">
+  <meta name="description" content="A polished Simon Says memory challenge. Watch the pattern, repeat it, and beat your best score.">
+  <title>Simon Says — Memory, in motion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="page-glow page-glow-one" aria-hidden="true"></div>
+  <div class="page-glow page-glow-two" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Simon Says home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span>mind<span class="brand-accent">play</span></span>
+      </a>
+      <div class="nav-links">
+        <a class="nav-link nav-link-current" href="index.html" aria-current="page">Home</a>
+        <a class="nav-link" href="howtoplay.html">How to play</a>
+      </div>
+      <button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="true" aria-label="Turn sound off">
+        <span class="sound-icon" aria-hidden="true">♫</span>
+        <span class="sound-label">Sound on</span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> The ultimate memory challenge</span>
+        <h1 id="page-title">TEST YOUR<br><span class="gradient-text">MEMORY.</span></h1>
+        <p>Watch the pattern. Remember the sequence.<br class="desktop-break"> Beat your highest score.</p>
+      </div>
+      <div class="hero-note" aria-hidden="true">
+        <span class="hero-note-orbit"></span>
+        <span class="hero-note-number">01</span>
+        <span class="hero-note-caption">FOCUS<br>• REPEAT<br>• REPEAT</span>
+      </div>
+    </section>
+
+    <section class="immersive-game" id="immersive-game" aria-label="Simon Says game area">
+      <div class="immersive-controls">
+        <button class="sound-toggle immersive-sound-toggle" id="immersive-sound-toggle" type="button" aria-pressed="true" aria-label="Turn sound off">
+          <span class="sound-icon" aria-hidden="true">♫</span>
+          <span class="sound-label">Sound on</span>
+        </button>
+        <button class="exit-fullscreen-button" id="exit-fullscreen-button" type="button"><span aria-hidden="true">×</span> Exit fullscreen</button>
+      </div>
+      <div class="record-toast" id="record-toast" role="status" aria-live="polite" hidden>
+        <span class="record-trophy" aria-hidden="true">🏆</span>
+        <span><strong>NEW HIGH SCORE!</strong><small>Outstanding! You've beaten your personal best!</small></span>
+      </div>
+      <div class="confetti-burst" id="confetti-burst" aria-hidden="true"></div>
+      <section class="game-layout" aria-label="Simon Says memory game">
+        <div class="game-card">
+          <div class="game-card-top">
+            <div class="game-card-title">
+              <span class="live-indicator" aria-hidden="true"></span>
+              <span>THE MEMORY GRID</span>
+            </div>
+            <span class="round-label">ROUND <strong id="round-number">00</strong></span>
+          </div>
+
+          <div class="board-wrap">
+            <div class="simon-board" id="simon-board" aria-label="Simon Says game buttons">
+              <button class="simon-pad pad-red" type="button" data-color="red" aria-label="Red button, shortcut 1" disabled><span class="pad-shine"></span></button>
+              <button class="simon-pad pad-green" type="button" data-color="green" aria-label="Green button, shortcut 2" disabled><span class="pad-shine"></span></button>
+              <button class="simon-pad pad-yellow" type="button" data-color="yellow" aria-label="Yellow button, shortcut 3" disabled><span class="pad-shine"></span></button>
+              <button class="simon-pad pad-blue" type="button" data-color="blue" aria-label="Blue button, shortcut 4" disabled><span class="pad-shine"></span></button>
+              <div class="board-center" aria-hidden="true">
+                <span class="center-mark">mp</span>
+                <span class="center-label">MEMORY<br>MODE</span>
+              </div>
+            </div>
+            <p class="board-hint"><span class="hint-key">1</span><span class="hint-key">2</span><span class="hint-key">3</span><span class="hint-key">4</span><span>or tap a color</span></p>
+          </div>
+
+          <div class="game-message" aria-live="polite" aria-atomic="true">
+            <span class="message-spark" aria-hidden="true">✦</span>
+            <p id="game-message">Ready to challenge your memory?</p>
+          </div>
+
+          <div class="game-actions">
+            <button class="button button-primary" id="start-button" type="button">
+              <span class="button-play" aria-hidden="true">▶</span>
+              <span>Start game</span>
+            </button>
+            <button class="button button-secondary" id="restart-button" type="button" aria-label="Restart game">
+              <span aria-hidden="true">↻</span>
+              <span>Restart</span>
+            </button>
+          </div>
+
+          <section class="result-card" id="result-card" aria-live="polite" hidden>
+            <div class="result-copy">
+              <span class="result-eyebrow">CHALLENGE COMPLETE</span>
+              <h2>GAME OVER!</h2>
+              <p>Your final score <strong id="final-score">0</strong> <span>(level reached)</span></p>
+              <p>Your highest score <strong id="final-best-score">000</strong></p>
+              <p class="result-record" id="result-record" hidden>🏆 New personal best! Outstanding run.</p>
+            </div>
+            <div class="result-actions">
+              <button class="button button-primary result-button" id="play-again-button" type="button">Play again <span aria-hidden="true">→</span></button>
+              <a class="button button-secondary result-button" href="index.html">Back to home</a>
+            </div>
+          </section>
+        </div>
+
+        <aside class="score-column" aria-label="Game statistics">
+          <div class="score-heading">
+            <span class="eyebrow">YOUR SESSION</span>
+            <span class="score-heading-mark" aria-hidden="true">✳</span>
+          </div>
+          <div class="stat-card stat-level">
+            <div class="stat-top"><span class="stat-icon">↗</span><span class="stat-label">CURRENT LEVEL</span></div>
+            <p class="stat-value" id="level-value">01</p>
+            <span class="stat-foot">One step at a time</span>
+          </div>
+          <div class="stat-card stat-score">
+            <div class="stat-top"><span class="stat-icon">✦</span><span class="stat-label">YOUR SCORE</span></div>
+            <p class="stat-value" id="score-value">000</p>
+            <span class="stat-foot">Highest level reached</span>
+          </div>
+          <div class="stat-card stat-best">
+            <div class="stat-top"><span class="stat-icon">♛</span><span class="stat-label">PERSONAL BEST</span></div>
+            <p class="stat-value" id="best-value">000</p>
+            <span class="stat-foot">Best level on this device</span>
+          </div>
+          <div class="status-card">
+            <span class="status-orb" id="status-orb" aria-hidden="true"></span>
+            <div><span class="stat-label">GAME STATUS</span><p id="status-value">Ready when you are</p></div>
+          </div>
+          <a class="text-link" href="howtoplay.html">New to the game? <span>Learn how to play <b aria-hidden="true">↗</b></span></a>
+        </aside>
+      </section>
+    </section>
+
+    <section class="encouragement" aria-label="Memory challenge">
+      <span class="encouragement-icon" aria-hidden="true">✳</span>
+      <div><span class="eyebrow">HOW FAR CAN YOU GO?</span><p>Only one new color flashes each round. Remember the full sequence, repeat it from the start, and see how high you can climb.</p></div>
+      <a class="button button-outline" href="howtoplay.html">How to play <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span>mindplay <span class="footer-dot">•</span> A little challenge for your brain.</span><span>Take a breath. Find your focus.</span></footer>
+</body>
+</html>

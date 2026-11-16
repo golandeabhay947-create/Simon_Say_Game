@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b14">
+  <meta name="description" content="Learn how to play the Simon Says memory challenge, understand scoring, and find helpful tips.">
+  <title>How to play — mindplay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="how-page">
+  <div class="page-glow page-glow-one" aria-hidden="true"></div>
+  <div class="page-glow page-glow-two" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Simon Says home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span>mind<span class="brand-accent">play</span></span>
+      </a>
+      <div class="nav-links">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link nav-link-current" href="howtoplay.html" aria-current="page">How to play</a>
+      </div>
+      <a class="nav-cta" href="index.html">Play the game <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main class="page-shell how-shell">
+    <section class="how-hero">
+      <div class="how-hero-copy">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> Your guide to the game</span>
+        <h1>HOW TO<br><span class="gradient-text">PLAY.</span></h1>
+        <p>Master the pattern. Sharpen your memory.<br class="desktop-break"> Reach new levels.</p>
+        <a class="button button-primary" href="index.html"><span class="button-play" aria-hidden="true">▶</span> Let's play</a>
+      </div>
+      <div class="preview-card" aria-label="Four game colors: red, green, yellow, and blue">
+        <div class="preview-orbit" aria-hidden="true"></div>
+        <div class="preview-grid">
+          <span class="preview-pad preview-red"></span><span class="preview-pad preview-green"></span>
+          <span class="preview-pad preview-yellow"></span><span class="preview-pad preview-blue"></span>
+        </div>
+        <span class="preview-caption">THE FOUR COLORS</span>
+        <span class="preview-dot preview-dot-one" aria-hidden="true"></span><span class="preview-dot preview-dot-two" aria-hidden="true"></span>
+      </div>
+    </section>
+
+    <section class="how-section" aria-labelledby="steps-title">
+      <div class="section-heading">
+        <div><span class="eyebrow">THE RHYTHM OF THE GAME</span><h2 id="steps-title">Four steps. One growing pattern.</h2></div>
+        <span class="section-index">01 — 04</span>
+      </div>
+      <div class="steps-grid">
+        <article class="step-card"><span class="step-number">01</span><span class="step-symbol">↗</span><h3>Start the game</h3><p>Press <strong>Start game</strong> to begin your memory challenge.</p></article>
+        <article class="step-card"><span class="step-number">02</span><span class="step-symbol">◉</span><h3>Watch the new color</h3><p>At each level, only one newly added color flashes.</p></article>
+        <article class="step-card"><span class="step-number">03</span><span class="step-symbol">✳</span><h3>Remember the full sequence</h3><p>Keep every earlier color in mind. The game won't replay them.</p></article>
+        <article class="step-card"><span class="step-number">04</span><span class="step-symbol">⌁</span><h3>Repeat the whole pattern</h3><p>Start from the very first color and tap the complete sequence in order.</p></article>
+        <article class="step-card"><span class="step-number">05</span><span class="step-symbol">✦</span><h3>Level up</h3><p>Complete the pattern correctly and one new color joins it.</p></article>
+        <article class="step-card"><span class="step-number">06</span><span class="step-symbol">♛</span><h3>Beat your personal best</h3><p>Keep going. Your highest level reached is saved on this device.</p></article>
+      </div>
+    </section>
+
+    <section class="sequence-example" aria-labelledby="sequence-example-title">
+      <div class="section-heading">
+        <div><span class="eyebrow">ONLY THE NEW COLOR FLASHES</span><h2 id="sequence-example-title">The pattern grows. You start at the beginning.</h2></div>
+        <span class="section-index">EXAMPLE RUN</span>
+      </div>
+      <div class="sequence-examples">
+        <article class="sequence-card">
+          <div class="sequence-card-heading"><span>LEVEL 1</span><span class="new-color-tag">NEW COLOR</span></div>
+          <p class="flash-instruction">RED flashes <span class="flash-arrow">→</span> You click</p>
+          <div class="sequence-chain"><span class="color-chip chip-red">RED</span></div>
+        </article>
+        <article class="sequence-card">
+          <div class="sequence-card-heading"><span>LEVEL 2</span><span class="new-color-tag">NEW COLOR</span></div>
+          <p class="flash-instruction">GREEN flashes <span class="flash-arrow">→</span> You click</p>
+          <div class="sequence-chain"><span class="color-chip chip-red">RED</span><span class="chain-arrow">→</span><span class="color-chip chip-green">GREEN</span></div>
+        </article>
+        <article class="sequence-card">
+          <div class="sequence-card-heading"><span>LEVEL 3</span><span class="new-color-tag">NEW COLOR</span></div>
+          <p class="flash-instruction">BLUE flashes <span class="flash-arrow">→</span> You click</p>
+          <div class="sequence-chain"><span class="color-chip chip-red">RED</span><span class="chain-arrow">→</span><span class="color-chip chip-green">GREEN</span><span class="chain-arrow">→</span><span class="color-chip chip-blue">BLUE</span></div>
+        </article>
+        <article class="sequence-card">
+          <div class="sequence-card-heading"><span>LEVEL 4</span><span class="new-color-tag">NEW COLOR</span></div>
+          <p class="flash-instruction">YELLOW flashes <span class="flash-arrow">→</span> You click</p>
+          <div class="sequence-chain"><span class="color-chip chip-red">RED</span><span class="chain-arrow">→</span><span class="color-chip chip-green">GREEN</span><span class="chain-arrow">→</span><span class="color-chip chip-blue">BLUE</span><span class="chain-arrow">→</span><span class="color-chip chip-yellow">YELLOW</span></div>
+        </article>
+      </div>
+      <p class="sequence-note"><span aria-hidden="true">✦</span> The computer flashes only the newly added color. You repeat every color in the full pattern.</p>
+    </section>
+
+    <section class="understanding-section">
+      <div class="section-heading">
+        <div><span class="eyebrow">THE DETAILS</span><h2>Know your game.</h2></div>
+        <span class="section-index">GOOD TO KNOW</span>
+      </div>
+      <div class="detail-grid">
+        <article class="detail-card"><span class="detail-mark">01</span><div><h3>What is a level?</h3><p>Each level adds exactly one new color. Only that new color flashes; your pattern keeps every earlier color.</p></div></article>
+        <article class="detail-card"><span class="detail-mark">02</span><div><h3>How does scoring work?</h3><p>Your score is the current level reached. The personal best is the highest level you have reached in a game.</p></div></article>
+        <article class="detail-card"><span class="detail-mark">03</span><div><h3>What if I miss?</h3><p>A wrong color or an out-of-order tap ends the game immediately. The final score and best score appear together.</p></div></article>
+        <article class="detail-card"><span class="detail-mark">04</span><div><h3>How is my record saved?</h3><p>Your personal best updates as soon as you reach a new level and stays saved in this browser.</p></div></article>
+      </div>
+    </section>
+
+    <section class="tips-section">
+      <div class="section-heading">
+        <div><span class="eyebrow">A FEW FRIENDLY REMINDERS</span><h2>Play it smart.</h2></div>
+        <span class="section-index">YOUR NEXT BEST</span>
+      </div>
+      <div class="tips-grid">
+        <div class="tip-card"><span>✳</span><p>Focus on the sequence</p></div>
+        <div class="tip-card"><span>◌</span><p>Build on the previous pattern</p></div>
+        <div class="tip-card"><span>↗</span><p>Stay calm as levels rise</p></div>
+        <div class="tip-card"><span>⌁</span><p>Take your time with each click</p></div>
+        <div class="tip-card"><span>✦</span><p>Practice makes progress</p></div>
+      </div>
+    </section>
+
+    <section class="keyboard-section">
+      <div><span class="eyebrow">PLAY YOUR WAY</span><h2>Keyboard shortcuts</h2><p>Keep your hands on the keys and your focus on the pattern.</p></div>
+      <div class="shortcut-list">
+        <div><span>Start a game</span><span class="keycap">ENTER</span><span class="key-divider">or</span><span class="keycap">SPACE</span></div>
+        <div><span>Restart anytime</span><span class="keycap">R</span></div>
+        <div><span>Repeat a color</span><span class="keycap">1</span><span class="keycap">2</span><span class="keycap">3</span><span class="keycap">4</span></div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <span class="cta-spark cta-spark-one" aria-hidden="true">✳</span><span class="cta-spark cta-spark-two" aria-hidden="true">✦</span>
+      <span class="eyebrow">YOUR NEXT CHALLENGE AWAITS</span>
+      <h2>READY TO TEST<br><span class="gradient-text">YOUR MEMORY?</span></h2>
+      <p>Now that you know the rules, it’s time to challenge yourself.</p>
+      <a class="button button-primary" href="index.html"><span class="button-play" aria-hidden="true">▶</span> Play now</a>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span>mindplay <span class="footer-dot">•</span> A little challenge for your brain.</span><a href="index.html">Back to game <span aria-hidden="true">↗</span></a></footer>
+</body>
+</html>
